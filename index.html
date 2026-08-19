@@ -2,254 +2,230 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Oferta Especial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>Consulta Online</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
--webkit-tap-highlight-color:transparent;
 }
 
 body{
-background:linear-gradient(180deg,#4f46e5,#2563eb,#7c3aed);
-padding:12px;
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
 min-height:100vh;
-}
-
-.container{
-width:100%;
-max-width:430px;
-margin:auto;
-}
-
-.alert{
-background:#ff0000;
-color:#fff;
-font-weight:800;
-font-size:13px;
-padding:12px;
-text-align:center;
-border-radius:50px;
-margin-top:8px;
-margin-bottom:15px;
-animation:pulse 1s infinite;
-}
-
-@keyframes pulse{
-50%{
-transform:scale(1.02);
-}
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
 }
 
 .card{
+width:100%;
+max-width:380px;
 background:#fff;
-padding:22px;
-border-radius:30px;
+border-radius:26px;
+overflow:hidden;
+box-shadow:0 25px 60px rgba(0,0,0,.25);
+animation:fade .5s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.topo{
+padding:35px 25px;
 text-align:center;
-box-shadow:0 10px 40px rgba(0,0,0,.25);
+background:linear-gradient(135deg,#2563eb,#3b82f6);
+color:#fff;
 }
 
-h1{
-font-size:28px;
-line-height:33px;
-color:#111;
-font-weight:800;
-margin-bottom:10px;
-}
-
-.sub{
-font-size:14px;
-color:#666;
-margin-bottom:15px;
-}
-
-.old{
-color:#999;
-font-size:18px;
-text-decoration:line-through;
-}
-
-.price{
-font-size:50px;
-font-weight:800;
-color:#16a34a;
-margin-top:5px;
-}
-
-.timer-box{
-margin-top:18px;
-background:#fff3f3;
-padding:15px;
-border-radius:18px;
-}
-
-.timer-title{
-color:red;
-font-size:15px;
-font-weight:700;
-}
-
-#timer{
+.logo{
+width:80px;
+height:80px;
+border-radius:50%;
+background:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
 font-size:38px;
-font-weight:800;
-color:red;
-margin-top:5px;
+margin:auto auto 18px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-margin-top:20px;
+.topo h1{
+font-size:28px;
+font-weight:800;
+line-height:1.3;
+}
+
+.topo p{
+margin-top:10px;
+font-size:15px;
+opacity:.95;
+}
+
+.botao{
+display:flex;
+justify-content:center;
+align-items:center;
+width:calc(100% - 40px);
+height:62px;
+margin:25px auto 0;
+background:linear-gradient(135deg,#16a34a,#22c55e);
+border-radius:18px;
+color:#fff;
+text-decoration:none;
+font-size:21px;
+font-weight:800;
+position:relative;
+overflow:hidden;
+animation:pulse 1.6s infinite;
+box-shadow:0 12px 35px rgba(34,197,94,.45);
+}
+
+.botao::before{
+content:"";
+position:absolute;
+left:-100%;
+top:0;
+width:60%;
+height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);
+animation:shine 2.5s infinite;
+}
+
+@keyframes shine{
+0%{left:-100%;}
+100%{left:140%;}
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.03);}
+100%{transform:scale(1);}
+}
+
+.conteudo{
+padding:28px 22px;
 }
 
 .item{
-background:#f4f4f4;
-padding:14px;
-border-radius:15px;
-font-size:13px;
+display:flex;
+align-items:center;
+gap:12px;
+padding:15px;
+background:#f8fafc;
+border-radius:14px;
+margin-bottom:14px;
+}
+
+.check{
+width:36px;
+height:36px;
+border-radius:50%;
+background:#dcfce7;
+display:flex;
+justify-content:center;
+align-items:center;
+font-weight:bold;
+}
+
+.item span{
+font-size:15px;
+color:#334155;
 font-weight:600;
 }
 
-.btn{
-display:block;
-width:100%;
-padding:18px;
-margin-top:25px;
-border-radius:50px;
-background:linear-gradient(to right,#16a34a,#22c55e);
-color:#fff;
-text-decoration:none;
-font-size:18px;
-font-weight:800;
-box-shadow:0 8px 25px rgba(34,197,94,.4);
-}
-
-.btn:active{
-transform:scale(.98);
-}
-
-.no{
-display:block;
-margin-top:15px;
+.aviso{
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:14px;
 font-size:13px;
-text-decoration:none;
-color:#777;
+line-height:1.7;
+color:#475569;
+text-align:center;
 }
 
-.secure{
-margin-top:18px;
+.rodape{
+padding:18px;
+text-align:center;
 font-size:12px;
-color:#999;
+color:#94a3b8;
+border-top:1px solid #eee;
 }
 
+@media(max-width:420px){
+
+.topo h1{
+font-size:24px;
+}
+
+.botao{
+font-size:19px;
+height:58px;
+}
+
+}
 </style>
+
 </head>
+
 <body>
-
-<div class="container">
-
-<div class="alert">
-⚠ OFERTA DISPONÍVEL SOMENTE NESTA TELA
-</div>
 
 <div class="card">
 
-<h1>ESPERE! SUA OFERTA FOI LIBERADA</h1>
+<div class="topo">
 
-<p class="sub">
-Adicione este benefício exclusivo antes de sair desta página.
-</p>
+<div class="logo">
+📄
+</div>
 
-<a href="https://polite-desenrola.netlify.app/" class="btn">
-SIM, QUERO APROVEITAR
+<h1>Consulta Online</h1>
+
+<p>Realize sua consulta de forma rápida e segura.</p>
+
+<a href="https://sparkly-desenrola.netlify.app/" class="botao">
+🚀 ACESSAR CONSULTA
 </a>
 
-<div class="old">
-De R$7597,90
 </div>
 
-<div class="price">
-R$98,52
-</div>
-
-<div class="timer-box">
-
-<div class="timer-title">
-Oferta expira em:
-</div>
-
-<div id="timer">
-05:00
-</div>
-
-</div>
-
-<div class="grid">
+<div class="conteudo">
 
 <div class="item">
-✔ Liberação imediata
+<div class="check">✓</div>
+<span>Processo totalmente online</span>
 </div>
 
 <div class="item">
-✔ Acesso rápido
+<div class="check">✓</div>
+<span>Ambiente protegido</span>
 </div>
 
 <div class="item">
-✔ Oferta exclusiva
+<div class="check">✓</div>
+<span>Compatível com celular, tablet e computador</span>
 </div>
 
-<div class="item">
-✔ Garantia
-</div>
-
-</div>
-
-<a href="https://polite-desenrola.netlify.app/" class="btn">
-SIM, QUERO APROVEITAR
-</a>
-
-<a href="#" class="no">
-Não, desejo continuar
-</a>
-
-<div class="secure">
-🔒 Navegação segura
+<div class="aviso">
+Antes de prosseguir, leia atentamente as informações apresentadas na próxima etapa. Verifique se o serviço atende às suas necessidades antes de enviar qualquer dado.
 </div>
 
 </div>
+
+<div class="rodape">
+© 2026 • Plataforma de Consulta Online
 </div>
 
-<script>
-
-let tempo=300;
-
-setInterval(()=>{
-
-tempo--;
-
-let m=Math.floor(tempo/60);
-let s=tempo%60;
-
-document.getElementById("timer").innerHTML=
-(m<10?"0":"")+m+":"+(s<10?"0":"")+s;
-
-if(tempo<=0){
-
-window.location.href="https://polite-desenrola.netlify.app/";
-
-}
-
-},1000);
-
-</script>
+</div>
 
 </body>
 </html>
